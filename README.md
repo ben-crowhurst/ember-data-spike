@@ -1,9 +1,21 @@
 EmberDataSetup
 ==============
+Ember Data Setup with Nodejs backend.
 
-Ember Data Setup with Node.js backend.
+PREREQUISITES
+==============
+Nodejs - http://nodejs.org/
+Node Package Manager (npm) - https://npmjs.org/
 
+INSTALLATION
+==============
 
-prereq
+$ cd EmberDataSetup
+$ npm install
 
-npm install
+RUNNING
+==============
+$ node source/server.js
+
+Open http://localhost:3000/html/application.html
+View both browser Javascript console and terminal window for output/logging.
