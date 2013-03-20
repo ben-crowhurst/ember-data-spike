@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <base href="../" target="_blank">
+        <title>EmberDataSetup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="script/library/jquery.js"></script>
+        <script src="script/library/handlebars.js"></script>
+        <script src="script/library/ember.js"></script>
+        <script src="script/library/plugin/ember-data.js"></script>
+
+        <script src="script/application.js"></script>
+        <script src="script/store.js"></script>
+        <script src="script/router.js"></script>        
+        
+        <script src="script/model/search.js"></script>
+        <script src="script/model/result.js"></script>
+
+        <script src="script/controller/searchResults.js"></script>
+        <script src="script/controller/search.js"></script>
+
+        <script src="script/route/index.js"></script>
+    </head>
+    <body lang="en">
+        <script type="text/x-handlebars" data-template-name="application">
+            {{outlet}}
+            <hr/>
+            {{outlet results}}
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="index">
+            <h1>Search Vehicle Registrations</h1>
+            VRM: {{view Ember.TextField valueBinding="vrm" disabledBinding="shouldDisable"}}<br/>
+            <input type="submit" {{action "search"}}/>
+            <input type="submit" value="refresh" {{action "refresh"}}/>
+        </script>
+
+        <script type="text/x-handlebars" data-template-name="results">
+            <h1>
+               Search Results
+            </h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>VRM</th>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Colour</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each result in controller}}
+                    <tr>
+                        <th>{{result.id}}</th>
+                        <td>{{result.vrm}}</td>
+                        <td>{{result.make}}</td>
+                        <td>{{result.model}}</td>
+                        <td>{{result.colour}}</td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </script>
+    </body>
+</html>
