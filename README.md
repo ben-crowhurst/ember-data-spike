@@ -1,4 +1,4 @@
-EmberDataSetup
+Ember Data Spike
 ==============
 Ember Data Setup with Nodejs backend.
 
